@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Contas Bancárias</title>
+    <script src="atvd9.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        #accountList {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestão de Contas Bancárias</h1>
+    <div id="container">
+        <h2>Inserir Detalhes da Conta</h2>
+        <form id="accountForm">
+            <label for="agencia">Agência:</label>
+            <input type="text" id="agencia" required>
+            <label for="numero">Número da Conta:</label>
+            <input type="text" id="numero" required>
+            <label for="tipo">Tipo de Conta:</label>
+            <select id="tipo" required>
+                <option value="Conta Corrente">Conta Corrente</option>
+                <option value="Conta Poupança">Conta Poupança</option>
+                <option value="Conta Universitária">Conta Universitária</option>
+            </select>
+            <br> <br>
+            <label for="saldo">Saldo:</label>
+            <input type="number" id="saldo" required>
+            <label for="cartaoCredito" id="cartaoCreditoLabel">Limite do Cartão de Crédito:</label>
+            <input type="number" id="cartaoCredito">
+            <button type="button" onclick="inserirConta()" id="inserirBtn">Inserir</button>
+        </form>
+
+        <h2>Operações</h2>
+        <button type="button" onclick="deletarConta()" id="deletarBtn">Deletar</button>
+        <button type="button" onclick="visualizarContas()" id="visualizarBtn">Visualizar</button>
+
+        <h2>Contas Bancárias</h2>
+        <div id="accountList"></div>
+    </div>
+
+</body>
+</html>
